@@ -1,0 +1,2 @@
+This folder contains data for the same motif as in the parent folder,
+except a parameter change makes this a REVERSIBLE switch.

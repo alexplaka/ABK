@@ -1,0 +1,219 @@
+% Hyperbolic Response - Adaptation system 
+
+%             |                        Rate: k_sp
+%             \
+% --> R <---> Rp -->                   Rates: k_sr, k_f, k_r, k_dp
+%        /      /
+%        |     /                       S: Signal (reactant in R forward reaction)
+%        S    /             
+%        |    |
+%        \    |                        S: Signal (upregulates synthesis of X)
+%        -->  X  -->               
+%        k_sx    k_dx                  Synthesis and degradation rates of X
+
+% k_sr:  0th order
+% k_f:   2nd order wrt S, R
+% k_r:   1st order wrt Rp
+% k_sp:  0th 0rder
+% k_dp:  2nd order wrt Rp, X
+% k_sx:  0th order (upregulated by S)
+% k_dx:  1st order wrt X
+
+% Assume number of S molecules does NOT change.
+
+% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+
+clear;             tic;
+clc; 
+%% Declare variables and functions
+global k_sr k_f k_r k_sp k_dp k_sx k_dx S;
+
+N_avo = 6.02e23;        % Avogadro's number
+V = 1e-21;              % Volume in L
+
+maxTime = 400;                         % Maximum Simulation time (sec)
+dt = 1/50;                              % Constant (fixed) time step increment (sec)
+t_steps = maxTime / dt;
+
+agents = 500;          	disp(['Agents = ' num2str(agents)]);
+
+ko_sr = 0.05;                           % basal rate of R synthesis (0th order)
+k_sr = ko_sr * (N_avo * V);
+ko_f = 10;                               % basal forward rate (2nd order)
+k_f = ko_f / (N_avo * V);
+k_r = 0.01;                             % basal reverse rate (1st order)
+ko_sp = 1e-4;                           % basal rate of Rp synthesis (0th order)
+k_sp = ko_sp * (N_avo * V);
+ko_dp = 2;                            % basal rate of Rp degradation (2nd order)
+k_dp = ko_dp / (N_avo * V);
+ko_sx = 1e-4;                         % basal rate of X synthesis (0th order)
+k_sx = ko_sx * (N_avo * V);         
+k_dx = 0.01;                           % basal rate of X degradation (1st order)
+
+S_level = linspace(20,80,4);
+S_array = zeros(1,t_steps);
+S_array(1 : t_steps/5) = S_level(1);
+S_array(t_steps/5 + 1 : t_steps*2/5) = S_level(2);
+S_array(t_steps*2/5 + 1 : t_steps*3/5) = S_level(3);
+S_array(t_steps*3/5 + 1 : t_steps) = S_level(4);
+
+%% Initialize - Preallocate memory for variables; ** Initial conditions **
+t = 1;                              % Time counter variable
+P_dp = zeros(1,t_steps);            % For storing probability value at each time step
+
+Tr = zeros(1,t_steps);              % Total sum of R agents in each time step	
+Trp = zeros(1,t_steps);             % Total sum of Rp agents in each time step
+Tx = zeros(1,t_steps);              % Total sum of X agents in each time step	
+
+% ******** Initial conditions - Number of R, Rp Agents *****************************
+Tr(1) = 0;                		Trp(1) = 0;               Tx(1) = 0;				
+% **********************************************************************************
+Rv = zeros(2,agents);           Rpv = zeros(2,agents);      Xv = zeros(2,agents);
+
+% % If initial condition is not all zeros, then run below code instead.
+% tempR = zeros(1,agents);                          
+% % Put "1" where agenst are "alive", then randomize the array
+% for c=1:Tr(1),                      tempR(c)=1;                 end
+% tempR = RandArray(tempR);           % Randomize array
+% Rv = [tempR ; tempR];               % Initialize vector storing state of R agents     
+% Rpv = ~Rv;                          % Initialize vector storing state of Rp agents 
+% % Notes on Rv, Rpv:
+% % - Markov process, so only previous and current time steps needed --> 2 rows:          
+% % - Rv and Rpv are complementary (R+Rp=agents) ONLY AS AN INITIAL CONDITION.
+% 
+% tempX = zeros(1,agents);             
+% % Put "1" where agents are "alive", then randomize the array
+% for d=1:Tx(1),                      tempX(d)=1;                 end
+% tempX = RandArray(tempX);                   % Randomize array
+% % Markov process, so only previous and current time steps needed --> 2 rows:    
+% Xv = [tempX ; tempX];                       % Initialize vector storing state of X agents
+% clear c d tempR tempX;
+
+%% ABK Simulation
+P_sr = k_sr * dt;
+P_r  = k_r  * dt;
+P_sp = k_sp * dt;
+P_dx = k_dx * dt;
+
+while t*dt <= maxTime && Tx(t)<agents
+    S = S_array(t);
+    
+    P_f  = k_f  * S * dt;
+    P_sx = k_sx * S * dt;
+    P_dp(t) = k_dp * Tx(t) * dt;
+	
+    % Take care of 0th order processes (synthesis of R, X) first
+    if rand < P_sr
+        tempR = find(Rv(1,:)==0);                  % Randomly choose R agent which becomes "alive" 
+        Rv(2,tempR(ceil(rand * size(tempR,2)))) = 1;
+    end
+
+    if rand < P_sp
+        tempRp = find(Rpv(1,:)==0);                  % Randomly choose Rp agent which becomes "alive" 
+        Rpv(2,tempRp(ceil(rand * size(tempRp,2)))) = 1;
+    end    
+    
+    if rand < P_sx
+        tempX = find(Xv(1,:)==0);                  % Randomly choose X agent which becomes "alive" 
+        Xv(2,tempX(ceil(rand * size(tempX,2)))) = 1;
+    end
+    % ** End of 0th order rxs **
+    
+    tempR = find(Rv(1,:)==1);
+    for h=1:size(tempR,2)                          % Reaction for each R molecule/agent
+        if rand < P_f       
+            tempRp = find(Rpv(1,:)==0);            % Randomly choose Rp agent which becomes "alive"
+            if isempty(tempRp) == 1,    break;      end
+            Rpv(2,tempRp(ceil(rand * size(tempRp,2)))) = 1;
+            Rv(2,tempR(h)) = 0;                    % Conversion of R to Rp
+        end
+    end
+
+    tempRp = find(Rpv(1,:)==1);
+    for j=1:size(tempRp,2)                         % Reaction for each Rp molecule/agent
+        r =  rand;
+        if r < P_r
+            Rpv(2,tempRp(j)) = 0;                  % Conversion of Rp to R
+            tempR = find(Rv(1,:)==0);              % Randomly choose R agent which becomes "alive"
+            Rv(2,tempR(ceil(rand * size(tempR,2)))) = 1;
+        elseif r >= P_r && r < P_dp(t)
+            Rpv(2,tempRp(j)) = 0;                  % Degradation of Rp
+        end
+    end
+    
+    tempX = find(Xv(1,:)==1);
+    for q=1:size(tempX,2)                          % Reaction for each X molecule/agent
+        if rand < P_dx
+            Xv(2,tempX(q)) = 0;                    % Degradation of X
+        end
+    end
+    
+    Tr(t+1) = sum(Rv(2,:));           Trp(t+1) = sum(Rpv(2,:));         Tx(t+1) = sum(Xv(2,:));
+    Rv(1,:) = Rv(2,:);                Rpv(1,:) = Rpv(2,:);              Xv(1,:) = Xv(2,:);
+    t = t + 1;   
+end
+S_array(t) = S_array(t-1);              
+% Remove unnecessary terminal 0's from arrays
+if t < t_steps
+    Tr = Tr(1:t);                                         
+    Trp = Trp(1:t);                             Tx = Tx(1:t);             
+    P_dp = P_dp(1:t);                           S_array = S_array(1:t);
+end
+
+disp(['ABK sim terminal R value   = ' num2str(Tr(end))]);  
+disp(['ABK sim terminal Rp value  = ' num2str(Trp(end))]); 
+disp(['ABK sim terminal X value   = ' num2str(Tx(end))]);                   clear Rv Rpv Xv;
+
+finaltime = (t-1) * dt;
+time = 0:dt:finaltime;
+
+%% Solve differential equation (was waiting for variable 'finaltime')
+
+S = S_level(1);                                                         % First Level of S
+[t_sol1, y_sol1] = ode45(@hadapt_dif,0:maxTime/5,[Tr(1); Trp(1); Tx(1)]);
+
+S = S_level(2);                                                         % Second Level of S
+[t_sol2, y_sol2] = ode45(@hadapt_dif,maxTime/5+dt:maxTime*2/5,...
+    [y_sol1(end,1); y_sol1(end,2); y_sol1(end,3)]);
+
+S = S_level(3);                                                         % Third Level of S
+[t_sol3, y_sol3] = ode45(@hadapt_dif,maxTime*2/5+dt:maxTime*3/5,...
+    [y_sol2(end,1); y_sol2(end,2); y_sol2(end,3)]);
+
+S = S_level(4);                                                         % Fourth Level of S
+[t_sol4, y_sol4] = ode45(@hadapt_dif,maxTime*3/5+dt:maxTime,...
+    [y_sol3(end,1); y_sol3(end,2); y_sol3(end,3)]);
+
+t_sol = [t_sol1; t_sol2; t_sol3; t_sol4];
+y_sol = [y_sol1; y_sol2; y_sol3; y_sol4];
+
+disp(['Diff eq terminal R value   = ' num2str(y_sol(end,1))]);
+disp(['Diff eq terminal Rp value  = ' num2str(y_sol(end,2))]);
+disp(['Diff eq terminal X value   = ' num2str(y_sol(end,3))]);
+
+%% Plot Time Course
+fig1 = figure('Name','Time Course - Adaptation','NumberTitle','off');
+set(fig1,'Position',[1 1 500 406]);
+
+plot(time,Tr,'m','MarkerSize',1);                                                      hold on;
+plot(time,Trp,'b','MarkerSize',1);                                                      hold on;
+plot(time,Tx,':','Color',[0 0.8 0],'MarkerSize',1);
+
+plot(t_sol,y_sol(:,1),'--','Color',[1 0.75 0],'LineWidth',2);
+plot(t_sol,y_sol(:,2),'--c','LineWidth',2);
+plot(t_sol,y_sol(:,3),'--g','LineWidth',1);    
+
+plot(time,S_array,'r','LineWidth',2);
+axis([0 maxTime 0 agents]);         
+xlabel('t (sec)');        ylabel('N(t)');                                           hold off;
+set(gca,'XMinorTick','on','YMinorTick','on','Box','off');
+leg1 = legend('N_R(t)','N_{Rp}(t)','N_X(t)','DE N_R(t)',...
+    'DE N_{Rp}(t)','DE N_X(t)','N_S');                                  % With DE curves
+% leg1 = legend('N_R(t)','N_X(t)','N_S','N_R^*');                         % Without DE curves
+set(leg1,'Location','East');
+set(leg1,'FontName','Times New Roman','FontSize',9,...
+    'EdgeColor',[0.95 0.95 0.95]);
+
+%% Finish
+clear r w h j q t tempR tempRp tempX;
+toc

@@ -1,0 +1,2 @@
+When Ep <--> E is not a MM process (i.e., it's a simple reversible process)
+then this motif is NOT a switch! The SR curve is linear.
