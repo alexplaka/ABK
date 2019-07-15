@@ -1,0 +1,4 @@
+For some of the above code to work, make sure to put the following root directories (and their subdirectories) of this repository in your Matlab path:
+
+/Utilities
+/CurveFitting_Code
