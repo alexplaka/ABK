@@ -1,5 +1,5 @@
 function rA = RandArray(A)
-% This function randomizes the order of a array's contents.
+% This function randomizes the order of an array's contents.
 % The array can be either a row or column vector.
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019
