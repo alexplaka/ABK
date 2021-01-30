@@ -130,7 +130,7 @@ for a=1:reps
             tempB = find(Bv(1,:)==1);
             for j = 1:size(tempB,2)
                 if rand < P_db                   % Degradation of B, 1st order rx
-                    Bv(2,tempB(j)) = 0;          % A agent is degraded
+                    Bv(2,tempB(j)) = 0;          % B agent is degraded
                 end
             end
 
@@ -168,7 +168,7 @@ for h=1:size(SR.B_ss,2)
         p(h) = plot(SR.S_array,SR.B_ss(:,h),'--',...
             'LineWidth',2,'Color',[1 0.69 0.39],'DisplayName','Unstable');
     else
-    p(h) = plot(SR.S_array,SR.B_ss(:,h),'-b','LineWidth',2,'DisplayName','Stable');
+        p(h) = plot(SR.S_array,SR.B_ss(:,h),'-b','LineWidth',2,'DisplayName','Stable');
     end
 end
 
