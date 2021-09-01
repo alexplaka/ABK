@@ -6,7 +6,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;  tic
-
+rng(0);
 pb = waitbar(0,'0');
 
 global k1 k2;
@@ -181,9 +181,10 @@ set(leg,'FontName','Times New Roman','FontSize',9,...
 
 %% Finish
 clear temp x deltaC deltaD r i;
+close(pb);
 toc
 
-% Result: It works!
+% Result: 
 % - Works for fixed time step increments.
 % - Note that calculated probabilities work best for small dt. For variable
 % time step increments some dt's will be large (towards the end of the

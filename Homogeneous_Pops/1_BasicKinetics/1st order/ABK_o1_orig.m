@@ -5,6 +5,7 @@
 % License: GNU GPLv3
 
 clear;       tic;
+rng(0);
     
 totalTime = 10;             % Simulation time (sec)
 % dt = 1/20;                % Constant (fixed) time step increment (sec)

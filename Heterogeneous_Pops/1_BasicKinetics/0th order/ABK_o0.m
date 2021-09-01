@@ -9,6 +9,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;
+rng(0);
 global k_b;               % Zeroth order MICROSCOPIC kinetic constant [units: N_a / sec];
 
 k_b = 1;
@@ -26,7 +27,8 @@ t = 1;                  % Time Counter variable
 dt = 0.01;              % Fixed time step increment
 
 Av = zeros(1,agents);
-% Rate constant for each new agent A, for some subsequent raction...
+
+% Rate constant for each new agent A, for some subsequent reaction...
 k = zeros(1,agents);        % generating heterogeneity
 
 while A(t) < agents               
@@ -42,7 +44,7 @@ while A(t) < agents
         end
         Av(x) = 1;
         
-        % create normally distributed k values with mean 0.6 and std=0.1
+        % create normally distributed k values with mean=0.6 and std=0.1
         k(x) = 0.6 + 0.1 * randn;  
         
     else

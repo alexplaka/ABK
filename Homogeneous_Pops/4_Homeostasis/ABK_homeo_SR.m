@@ -19,7 +19,8 @@
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
-clear;      clc;     tic;                           % rng(1);
+clear;      clc;     tic;                           
+rng(1);
 
 global maxRagents agents k_b k_d k_f k_r Km_f Km_r S;
 
@@ -221,13 +222,13 @@ annotation(fig0,'textbox',...
     'FitBoxToText','off','LineStyle','none','Color',[0 0.75 0]);
 
 %% Plot (selected) time trajectories
-time = 0:dt:finaltime;
-scatter(time,Rv(21,:),3,'.b');                                               
-scatter(time,Ev(1,:),3,'og');
-scatter(t_sol,y_sol(:,1),3,'xr');                                       hold on;
-scatter(t_sol,y_sol(:,3),3,'.g'); 
-axis([0 finaltime 0 agents]);         xlabel('time');            ylabel('#');     hold off; 
-legend('R stoc','E stoc','R deter','E deter','Location','Best');
+% time = 0:dt:finaltime;
+% scatter(time,Rv(21,:),3,'.b');                                               
+% scatter(time,Ev(1,:),3,'og');
+% scatter(t_sol,y_sol(:,1),3,'xr');                                       hold on;
+% scatter(t_sol,y_sol(:,3),3,'.g'); 
+% axis([0 finaltime 0 agents]);         xlabel('time');            ylabel('#');     hold off; 
+% legend('R stoc','E stoc','R deter','E deter','Location','Best');
 
 %% Plot State Space - Modify accordingly
 % figure('Name','State Space','NumberTitle','off');               hold on;

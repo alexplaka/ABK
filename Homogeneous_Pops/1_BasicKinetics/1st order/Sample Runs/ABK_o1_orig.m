@@ -6,6 +6,7 @@
 % License: GNU GPLv3
 
 clear;       tic;
+rng(1);
     
 lambda = 0.8;                   k = log(2)/lambda;
 totalTime = 8;             % Simulation time (sec)

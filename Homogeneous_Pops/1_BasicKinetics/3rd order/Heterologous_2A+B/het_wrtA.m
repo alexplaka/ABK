@@ -7,6 +7,7 @@
 % License: GNU GPLv3
 
 clear; clc;
+rng(0);
 
 Avonum = 6.02e+23;      % Avogadro's number
 km = 1;      % Bimolecular molar kinetic constant [units: 1 /(M sec)];
@@ -63,7 +64,7 @@ scatter(ty,y_sol(:,1),'xb');
 scatter(ty,y_sol(:,2),'xg');
 scatter(ty,y_sol(:,3),'xr');
 
-legend('Agent A','Agent B','Agent D');        hold off;
+legend('A','B','D');        hold off;
 
 clear temp temp2 x i;
 

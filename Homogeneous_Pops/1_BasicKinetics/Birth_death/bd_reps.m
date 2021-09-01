@@ -7,6 +7,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;            tic;
+rng(1);
 pb = waitbar(0,'0');
 %% Declare variables and functions
 global k_b k_d;
@@ -35,7 +36,7 @@ P_b = 1 - exp(-k_b*dt);       % Probability of "birth" process (0th order), P_be
 P_d = 1 - exp(-k_d * dt);     % Probability of "death" process (1st order), P_ber
 % *********************************************************************************
 
-reps = 100;
+reps = 500;  % change this to 5000 to obtain figure 2.15b,c in the report.
 Sa = zeros(reps,t_steps);    
 %% ABK Simulation 
 

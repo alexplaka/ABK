@@ -17,6 +17,7 @@
 %% Declare variables and functions
 
 clear;            tic;                  clc; 
+rng(0);
 % pb = waitbar(0,'0');                      % Slows things down quite a bit
 
 global k_da k_db agents;

@@ -8,6 +8,7 @@
 % License: GNU GPLv3
 
 clear; clc;     tic
+rng(0);
 
 global k;           % Bimolecular microscopic kinetic constant [units: 1/sec];
 k = 0.01;
@@ -61,6 +62,13 @@ tmax=time(t-1);
 %% Plot
 figure('Name','2nd Order Rx Time course','NumberTitle','off'); 
 plot(time,avgA,time,avgB,time,avgC);                                    hold on;
+
+% Plot DE solutions
+plot(ty,y_sol(:,1),':b');               % scatter(ty,y_sol(:,1),'.b');                  
+plot(ty,y_sol(:,2),':g');               % scatter(ty,y_sol(:,2),'.g');
+plot(ty,y_sol(:,3),':r');               % scatter(ty,y_sol(:,3),'.r');
+
+% Plot Std envelopes
 p1_devA1 = plot(time,avgA+sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devA0 = plot(time,avgA-sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devB1 = plot(time,avgB+sdevB,'LineStyle','--','Color',[0.8 0.8 0.8]);
@@ -68,13 +76,9 @@ p1_devB0 = plot(time,avgB-sdevB,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devC1 = plot(time,avgC+sdevC,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devC0 = plot(time,avgC-sdevC,'LineStyle','--','Color',[0.8 0.8 0.8]);
 
-xlabel('time');             legend('Agent A','Agent B','Agent C');
+xlabel('time');             legend('A','B','C', 'DE A','DE B','DE C');
 axis([0 maxTime 0 agents]);
 
-%Plot DE solutions
-plot(ty,y_sol(:,1),':b');               % scatter(ty,y_sol(:,1),'.b');                  
-plot(ty,y_sol(:,2),':g');               % scatter(ty,y_sol(:,2),'.g');
-plot(ty,y_sol(:,3),':r');               % scatter(ty,y_sol(:,3),'.r');
 
 clear p1*;
 %% Finish

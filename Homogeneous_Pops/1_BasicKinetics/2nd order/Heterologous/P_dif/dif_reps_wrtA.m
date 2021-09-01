@@ -8,6 +8,7 @@
 % License: GNU GPLv3
 
 clear; clc;     tic
+rng(1);
 
 global k;           % Bimolecular microscopic kinetic constant [units: 1/sec];
 k = 0.01;
@@ -18,7 +19,7 @@ dt = 1/100;                               % Fixed time step increment
 % dt = 1 / (50*k*agents);                 % Fixed time step increment
 % The above equation for dt ensures that the initial probability is <1
 % The factor of 50 is arbitrary and assures that P(1)<0.02
-reps = 500;                               % Repeat experiment this # of times
+reps = 5000;                               % Repeat experiment this # of times
 t_steps = ceil(maxTime / dt);
 
 % Preallocate memory; Initialize time-dependent sum of molecule numbers
@@ -64,6 +65,13 @@ tmax=time(t-1);
 %% Plot
 figure('Name','2nd Order Rx Time course','NumberTitle','off'); 
 plot(time,avgA,time,avgB,time,avgC);                                    hold on;
+
+% Plot DE solutions
+plot(ty,y_sol(:,1),':b');               % scatter(ty,y_sol(:,1),'.b');                  
+plot(ty,y_sol(:,2),':g');               % scatter(ty,y_sol(:,2),'.g');
+plot(ty,y_sol(:,3),':r');               % scatter(ty,y_sol(:,3),'.r');
+
+% Plot Std envelopes
 p1_devA1 = plot(time,avgA+sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devA0 = plot(time,avgA-sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devB1 = plot(time,avgB+sdevB,'LineStyle','--','Color',[0.8 0.8 0.8]);
@@ -71,13 +79,8 @@ p1_devB0 = plot(time,avgB-sdevB,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devC1 = plot(time,avgC+sdevC,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_devC0 = plot(time,avgC-sdevC,'LineStyle','--','Color',[0.8 0.8 0.8]);
 
-xlabel('time');             legend('Agent A','Agent B','Agent C');
+xlabel('time');             legend('A','B','C', 'DE A','DE B','DE C');
 axis([0 maxTime 0 agents]);
-
-%Plot DE solutions
-plot(ty,y_sol(:,1),':b');               % scatter(ty,y_sol(:,1),'.b');                  
-plot(ty,y_sol(:,2),':g');               % scatter(ty,y_sol(:,2),'.g');
-plot(ty,y_sol(:,3),':r');               % scatter(ty,y_sol(:,3),'.r');
 
 clear p1*;
 

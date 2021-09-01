@@ -22,6 +22,7 @@
 % Considering individual agents.
 
 clear;      clc;     tic;                           % rng(1);
+rng(0);
 
 global agents k_b k_d k_s k_f k_r Km_f Km_r S;
 

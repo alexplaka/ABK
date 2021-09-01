@@ -1,10 +1,11 @@
 %  A --> B  ; Simulating 1st order kinetics. Considering individual agents.
-% *** Heterogeneous populationof A ***
+% *** Heterogeneous population of A ***
 % Here, we assume normally distributed k values of the A population.
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;             tic
+rng(0);
 
 % Assume constant time step increment (sec)
 dt = 0.01;
@@ -21,7 +22,7 @@ extt = zeros(reps, agents);     % To monitor extinction time of agents
 
 % ****** Set population's k values ************
 % Normally-distributed k values across population 
-% with mean = ko and standard deviation of sigma.
+% with mean = ko and standard deviation = sigma.
 ko = 0.5;                           sigma = 0.1;
 repeat = 1;
 while repeat == 1

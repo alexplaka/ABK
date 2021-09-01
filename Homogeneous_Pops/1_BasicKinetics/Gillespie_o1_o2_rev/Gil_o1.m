@@ -4,6 +4,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;
+rng(0);
 
 A = ones(1,1000);
 lambda = 0.8;

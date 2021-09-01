@@ -15,7 +15,8 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;            tic;                  clc; 
-rng('shuffle');
+% rng('shuffle');
+rng(0);
 pb = waitbar(0,'0');
 %% Declare variables and functions
 global k_da k_db agents;
@@ -28,7 +29,7 @@ maxTime = 2000;                        % Maximum Simulation time (sec)
 dt = 1/50;                              % Constant (fixed) time step increment (sec)
 t_steps = maxTime / dt;
 
-reps = 10;                             % Number of times to repeat experiment
+reps = 50;                             % Number of times to repeat experiment
 
 A_all = zeros(reps,t_steps+1);        B_all = zeros(reps,t_steps+1);
 

@@ -5,6 +5,7 @@
 % License: GNU GPLv3
 
 clear; clc;                                 tic
+rng(1);
 
 k = 1;      % Zeroth order MICROSCOPIC kinetic constant [units: N_x / sec];
 
@@ -68,7 +69,7 @@ p1_dev0 = plot(time,avg-sdev,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_de = plot(time,DE_sol,':r','MarkerSize',3,...
     'DisplayName','$N_X(t)=k_0 \, t$');
 
-trial = 11;                                 % Should be <= reps
+trial = 110;                                 % Should be <= reps
 p1_s = plot(time,Sx(trial,:),'g','MarkerSize',3,...
     'DisplayName','$\textrm{Sample Trajectory}$');
 

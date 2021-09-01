@@ -12,6 +12,7 @@
 % License: GNU GPLv3
 
 clear;                                  tic
+rng(0);
 
 global k dif_canon;                       
 

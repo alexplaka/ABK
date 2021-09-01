@@ -5,6 +5,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;            tic;
+rng(0);
 pb = waitbar(0,'0');
 %% Declare variables and functions
 global ko_f ko_r;

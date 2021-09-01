@@ -22,8 +22,9 @@
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
-clear;      clc;     tic;                           % rng(1);
-reps = 10;                 % Number of times to repeat experiment
+clear;      clc;     tic;                           
+rng(1);
+reps = 30;                 % Number of times to repeat experiment
 global agents k_b k_d k_s k_f k_r S;
 
 totalTime = 10;              % Simulation time (sec)

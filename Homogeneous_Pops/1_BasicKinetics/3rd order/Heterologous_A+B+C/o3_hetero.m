@@ -5,6 +5,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;                 tic
+rng(0);
 
 global k;       % Termolecular microscopic kinetic constant [units: 1/sec];
 k = 0.001;
@@ -46,7 +47,7 @@ for n=1:reps
                 B(temp(i)) = 0;           % Agent B dies
                 A(temp(i)) = 0;           % Agent A dies
                 C(temp(i)) = 0;           % Agent C dies
-                D(temp(i)) = 1;           % Agent D is born!
+                D(temp(i)) = 1;           % Agent D is born
             end
         end 
         time(t) = time(t-1) + dt;

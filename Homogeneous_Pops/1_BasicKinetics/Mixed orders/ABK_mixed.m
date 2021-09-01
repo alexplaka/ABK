@@ -6,6 +6,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;  tic
+rng(0);
 
 Avonum = 6.02e+23;      % Avogadro's number
 V = 10^-21;          % in Liters
@@ -57,12 +58,12 @@ while Bt(t-1) > 0 && At(t-1) > 0
     t = t + 1;
 end
 
+%% Plot trajectories
 figure('Name','Mixed Rx Time Course','NumberTitle','off'); 
 plot(time,At,time,Bt,time,Ct,time,Dt);            hold on;
 xlabel('time');       
-legend('Agent A','Agent B','Agent C','Agent D','Location','Best');
 
-%% Solve ODE for mixed order kinetics - Plot Time Courses
+% Solve ODE for mixed order kinetics - Plot Time Courses
 tmax=time(t-1);
 [ty,y_sol] = ode45(@o12_mixed_dif,[0:tmax/100:tmax],[At(1);Bt(1);Ct(1);Dt(1)]);
 scatter(ty,y_sol(:,1),'.b');         
@@ -70,6 +71,9 @@ scatter(ty,y_sol(:,2),'.g');
 scatter(ty,y_sol(:,3),'.r');
 scatter(ty,y_sol(:,4),'.c');
 
+legend('A','B','C','D','DE A','DE B','DE C','DE D','Location','Best');
+
+%%
 clear temp x deltaC deltaD r i;
 toc
 

@@ -6,6 +6,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;  tic
+rng(0);
 
 global k1 k2;
 k1 = 0.5;                % k1: 1st order rate constant [units: 1/sec]
@@ -96,7 +97,7 @@ set(figure1,'Position',[1 1 500 450]);
 p1 = plot(time,avgA,'b','MarkerSize',3,'DisplayName','<N_A(t)>_{sim}');                 hold on;
 p1_dev1 = plot(time,avgA+sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
 p1_dev0 = plot(time,avgA-sdevA,'LineStyle','--','Color',[0.8 0.8 0.8]);
-p1s = plot(time,Sa(end,:),'m','MarkerSize',3,'DisplayName','Sample Trajectory');
+p1s = plot(time,Sa(5,:),'m','MarkerSize',3,'DisplayName','Sample Trajectory');
 
 p3 = plot(time,avgC,'k','MarkerSize',3,'DisplayName','<N_X(t)>_{sim}');                 
 p3_dev1 = plot(time,avgC+sdevC,'LineStyle','--','Color',[0.8 0.8 0.8]);

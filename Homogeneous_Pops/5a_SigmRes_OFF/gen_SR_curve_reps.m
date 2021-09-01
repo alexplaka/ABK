@@ -9,12 +9,13 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;             tic;            clc; 
+rng(0);
 pb = waitbar(0,'0');
 
 % Declare variables
 global k_f k_r Km_f Km_r S;
 
-reps = 10;
+reps = 30;
 
 maxTime = 1000;                         % Maximum Simulation time (sec)
 dt = 1/50;                              % Constant (fixed) time step increment (sec)

@@ -14,6 +14,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;             tic;            clc; 
+rng(0);
 pb = waitbar(0,'0');
 
 %% Declare variables
@@ -23,7 +24,7 @@ maxTime = 100;                         % Maximum Simulation time (sec)
 dt = 1/100;                           % Constant (fixed) time step increment (sec)
 t_steps = maxTime / dt;
 
-reps = 10;
+reps = 30;
 
 agents = 100;                 	disp(['Agents = ' num2str(agents)]);
 k_f = 0.01;                            % basal forward rate (2nd order)

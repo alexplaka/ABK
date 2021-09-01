@@ -13,7 +13,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;      clc;     tic;
-
+rng(0);
 agents = 1200;
 
 N_avo = 6.02e23;                % Avogadro's number

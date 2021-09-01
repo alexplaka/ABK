@@ -20,6 +20,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;      clc;     tic;                           % rng(1);
+rng(0);
 
 global maxRagents agents k_b k_d k_f k_r Km_f Km_r S;
 

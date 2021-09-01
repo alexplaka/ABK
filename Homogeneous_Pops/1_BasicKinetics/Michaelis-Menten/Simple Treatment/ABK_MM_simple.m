@@ -6,6 +6,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;       tic;
+rng(0);
 
 global k_cat Km E_tot;
 
@@ -59,6 +60,7 @@ xlabel('t');                                ylabel('agents');
 legend('ABM A','ABM B','DE A','DE B');                              hold off;
 
 %% plot Rx Speed/Rate vs A (hyperbolic)
+figure;
 plot(Sa,v,'r','LineWidth',3);                       
 xlabel('N_A');    ylabel('-dA/dt');
 axis([0 agents 0 k_cat*E_tot]);

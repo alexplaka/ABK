@@ -25,6 +25,7 @@
 
 clear;             tic;
 clc; 
+rng(0);
 %% Declare variables and functions
 global k_sr k_f k_r k_sp k_dp k_sx k_dx S;
 

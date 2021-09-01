@@ -11,12 +11,13 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;            tic;
+rng(0);
 pb = waitbar(0,'0');
 %% Declare variables and functions
 % ******** Initial condition - Number of A agents ********
 Ao = 0;                       % Initial population size of A
 
-reps = 5000;                  % Repeat simulation this many times
+reps = 1000;                  % Repeat simulation this many times
 
 maxTime = 500;                % Maximum Simulation time (sec)  ********************
 dt = 1/100;                   % Constant (fixed) time step increment (sec)

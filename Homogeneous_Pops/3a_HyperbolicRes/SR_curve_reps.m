@@ -9,6 +9,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;             tic;            clc; 
+rng(0);
 pb = waitbar(0,'0');
 
 %% Declare variables

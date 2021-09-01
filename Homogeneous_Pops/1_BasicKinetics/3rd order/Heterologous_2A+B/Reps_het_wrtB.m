@@ -5,6 +5,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;                         tic
+rng(0);
 
 global k;       % Termolecular microscopic kinetic constant [units: 1/sec];
 k = 0.0001;

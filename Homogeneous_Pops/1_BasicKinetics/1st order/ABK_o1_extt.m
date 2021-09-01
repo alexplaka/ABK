@@ -8,6 +8,7 @@
 % License: GNU GPLv3
 
 clear; clc;             tic
+rng(0);
 
 % Assume constant time step increment (sec)
 dt = 0.01;

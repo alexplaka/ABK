@@ -4,7 +4,8 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019
 % License: GNU GPLv3
 
-clear; clc;
+clear;  clc;
+rng(0);
 
 Avonum = 6.02e+23;      % Avogadro's number
 km = 0.01;      % Bimolecular molar kinetic constant [units: 1 /(M sec)];
@@ -48,14 +49,16 @@ end
 
 figure('Name','2nd Order Rx Time course','NumberTitle','off'); 
 plot(time,At,time,Bt,time,Ct);             hold on;
-xlabel('time');             legend('Agent A','Agent B','Agent C');
+xlabel('time');             
 
 % Solve ODE for 2nd order kinetics - Plot Time Courses
 tmax=time(t-1);
 [ty,y_sol] = ode45(@o2_dif,[0:tmax/100:tmax],[At(1) ; Bt(1) ; Ct(1)]);
 scatter(ty,y_sol(:,1),'.b');                  
-scatter(ty,y_sol(:,2),'.g');
-scatter(ty,y_sol(:,3),'.r');
+scatter(ty,y_sol(:,2),'.r');
+scatter(ty,y_sol(:,3),'.y');
+
+legend('A','B','C', 'DE A', 'DE B', 'DE C');
 
 clear temp x i;
 

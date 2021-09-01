@@ -12,11 +12,12 @@
 % - If R goes extinct, then F will too (according to this model).
 % - If F goes extinct, then R grows exponentially.
 
-clear;      clc;     tic;                           % rng(1);
+clear;      clc;     tic;                           
+rng(1);
 
 global a b c d;
 
-reps = 1000;                    % Repeat simulation this many times
+reps = 500;                    % Repeat simulation this many times
 % BUT, I will discard simulations where the population of R blows up
 % (when F goes extinct), or both species go extinct.
 to_remove = [];

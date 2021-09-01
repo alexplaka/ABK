@@ -5,6 +5,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;
+rng(0);
 
 Avonum = 6.02e+23;      % Avogadro's number
 km = 0.01;      % Bimolecular molar kinetic constant [units: 1 /(M sec)];

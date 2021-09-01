@@ -7,6 +7,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;
+rng(0);
 
 agents = 100;
 dt = 0.01;                            % Fixed time step increment

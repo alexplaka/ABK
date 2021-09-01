@@ -25,7 +25,8 @@
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
-clear;      clc;     tic;                           % rng(1);
+clear;      clc;     tic;                           
+rng(1);
 
 global a b c d k_f k_r;
 
@@ -468,41 +469,41 @@ end
 hold off;                                   clear q tempy tempf species;
 
 %% Calculate meshgrid for direction field ; Plot State-Space trajectories
-cap = max(max(y_sol))*1.2;                          % ** Set appropriate state-space window **
+% cap = max(max(y_sol))*1.2;                          % ** Set appropriate state-space window **
 
-[Xm,Ym,Zm] = meshgrid(startvalue:cap/10:cap);       % Mesh-grid values for constructing state space
+% [Xm,Ym,Zm] = meshgrid(startvalue:cap/10:cap);       % Mesh-grid values for constructing state space
 
-dX_num = double(subs(dX_sym,[X,Y,Z],{Xm,Ym,Zm}));
-dY_num = double(subs(dY_sym,[X,Y,Z],{Xm,Ym,Zm}));
-dZ_num = double(subs(dZ_sym,[X,Y,Z],{Xm,Ym,Zm}));
+% dX_num = double(subs(dX_sym,[X,Y,Z],{Xm,Ym,Zm}));
+% dY_num = double(subs(dY_sym,[X,Y,Z],{Xm,Ym,Zm}));
+% dZ_num = double(subs(dZ_sym,[X,Y,Z],{Xm,Ym,Zm}));
 
 % r = ( dX_num.^2 + dY_num.^2 + dZ_num.^2 ).^0.5;
-r=1;
+% r=1;
 
-figure('Name','State Space','NumberTitle','off','Position',[1 1 500 500]);          hold on;            
-
-quiver3(Xm,Ym,Zm,dX_num./r,dY_num./r,dZ_num./r,'g');      % plot direction field                           
-
-p_de = plot3(y_sol(:,1),y_sol(:,2),y_sol(:,3),'k','LineWidth',1,...
-    'DisplayName','DE trajectory');                 % plot deterministic trajectory
-p_abk = plot3(avg_X,avg_Y,avg_Z,'b','LineWidth',2,...
-    'DisplayName','Mean ABK trajectory');           % plot AVG stochastic trajectory
+% figure('Name','State Space','NumberTitle','off','Position',[1 1 500 500]);          hold on;            
+% 
+% quiver3(Xm,Ym,Zm,dX_num./r,dY_num./r,dZ_num./r,'g');      % plot direction field                           
+% 
+% p_de = plot3(y_sol(:,1),y_sol(:,2),y_sol(:,3),'k','LineWidth',1,...
+%     'DisplayName','DE trajectory');                 % plot deterministic trajectory
+% p_abk = plot3(avg_X,avg_Y,avg_Z,'b','LineWidth',2,...
+%     'DisplayName','Mean ABK trajectory');           % plot AVG stochastic trajectory
 % p_abk = plot3(X_all(trial,1:10:end),Y_all(trial,1:10:end),Z_all(trial,1:10:end),'b',...
 %     'LineWidth',2,'DisplayName','Trial ABK trajectory');       % plot TRIAL stochastic trajectory
 
-p_ic = plot3(Xi,Yi,Zi,'rp','MarkerSize',9,'MarkerFaceColor','r',...  % plot initial condition
-    'DisplayName',['Initial: (' num2str(Xi) ',' num2str(Yi) ',' num2str(Zi) ')']);
-p_fp = plot3(X_ss,Y_ss,Z_ss,'oc','MarkerSize',8,...
-    'MarkerFaceColor','y','DisplayName',...
-    ['FP: (' num2str(X_ss) ',' num2str(Y_ss) ',' num2str(Z_ss) ')']);             % FP
-
-set(gca,'XMinorTick','on','YMinorTick','on','Box','off');
-axis([0 cap 0 cap 0 cap]);            set(gca,'DataAspectRatio',[1 1 1]);            
-xlabel('N_X');                  ylabel('N_Y');                  zlabel('N_Z');
-
-leg = legend([p_abk , p_de , p_fp , p_ic]);
-set(leg,'FontName','Times New Roman','FontSize',8,'Interpreter','TeX',...   
-    'EdgeColor',[0.95 0.95 0.95]);                                                  hold off;
+% p_ic = plot3(Xi,Yi,Zi,'rp','MarkerSize',9,'MarkerFaceColor','r',...  % plot initial condition
+%     'DisplayName',['Initial: (' num2str(Xi) ',' num2str(Yi) ',' num2str(Zi) ')']);
+% p_fp = plot3(X_ss,Y_ss,Z_ss,'oc','MarkerSize',8,...
+%     'MarkerFaceColor','y','DisplayName',...
+%     ['FP: (' num2str(X_ss) ',' num2str(Y_ss) ',' num2str(Z_ss) ')']);             % FP
+% 
+% set(gca,'XMinorTick','on','YMinorTick','on','Box','off');
+% axis([0 cap 0 cap 0 cap]);            set(gca,'DataAspectRatio',[1 1 1]);            
+% xlabel('N_X');                  ylabel('N_Y');                  zlabel('N_Z');
+% 
+% leg = legend([p_abk , p_de , p_fp , p_ic]);
+% set(leg,'FontName','Times New Roman','FontSize',8,'Interpreter','TeX',...   
+%     'EdgeColor',[0.95 0.95 0.95]);                                                  hold off;
 
 %% Finish
 % save('matlab.mat','a','b','c','d','k_*','agents','*i','reps','maxTime','dt','time','*_all');

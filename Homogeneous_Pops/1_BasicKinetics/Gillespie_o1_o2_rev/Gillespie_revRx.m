@@ -5,6 +5,7 @@
 % License: GNU GPLv3
 
 clear;
+rng(0);
 
 k1 = 0.1;                   % Define rate constant for forward reaction
 k2 = 0.2;                   % Define rate constant for reverse reaction

@@ -7,6 +7,8 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;       tic;
+rng(0);
+
 N_avo = 6.02e23;        % Avogadro's number
 V = 1e-21;              % Volume in L
 global k_b k_d;

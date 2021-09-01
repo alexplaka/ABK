@@ -13,6 +13,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear; clc;     tic
+rng(0);
 
 agents = 10;
 
@@ -20,7 +21,7 @@ maxTime = 200;
 dt = 1/100;                                     % Fixed time step increment
 t_steps = ceil(maxTime / dt);
     
-reps = 100;                                    % Repeat experiment this # of times
+reps = 1000;                                    % Repeat experiment this # of times
 
 % Initial number of reactant molecules; assume B is limiting.
 Ao = agents;                    Bo = ceil(0.7*agents);                
@@ -28,7 +29,7 @@ Co = 0;                         Cmax = Bo;
 
 % **************** 2 Distinct Subinteractions *********************
 % **********   Set up k-matrix wrt B (size: Bo x Ao)   ************
-k_sub = [0.001 , 0.009];                % units: 1/sec
+k_sub = [0.004 , 0.006];                % units: 1/sec
 subints = size(k_sub,2);                % number of subinteractions
 k1 = k_sub(1)*ones(Bo,Ao/2);            k2 = k_sub(2)*ones(Bo,Ao/2);
 k = [k1, k2];

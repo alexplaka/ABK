@@ -31,7 +31,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;      clc;     tic;                           % rng(1);
-
+rng(0);
 global agents k_s k_b k_d1 k_d2 k_f k_r Km_f Km_r k_f1 k_r1 Km_f1 Km_r1 S;
 
 totalTime = 4000;                   % Simulation time (sec)

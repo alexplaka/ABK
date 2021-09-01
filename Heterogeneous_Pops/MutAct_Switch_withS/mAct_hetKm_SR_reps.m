@@ -27,11 +27,12 @@
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
-clear;      clc;     tic;                           % rng(1);
+clear;      clc;     tic;                           
+rng(1);
 
 pb = waitbar(0,'0');                      % Slows things down quite a bit
 
-reps = 1000;
+reps = 100;
 
 global agents k_b k_d k_s k_f k_r Km_f Km_r_mean S;
 

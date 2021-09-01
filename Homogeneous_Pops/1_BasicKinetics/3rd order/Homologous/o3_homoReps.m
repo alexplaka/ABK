@@ -11,6 +11,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;  clc;                                 tic
+rng(0);
 
 global k dif_canon;                       
 

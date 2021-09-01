@@ -16,7 +16,8 @@
 
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
-clear;      clc;     tic;                           % rng(1);
+clear;      clc;     tic;                           
+rng(1);
 
 global a b c d;
 

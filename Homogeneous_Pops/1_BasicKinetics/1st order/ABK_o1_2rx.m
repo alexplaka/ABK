@@ -11,6 +11,7 @@
 % License: GNU GPLv3
 
 clear;                    tic;
+rng(1);
 
 % Define Parameters
 t_steps = 1200;              agents = 1000;

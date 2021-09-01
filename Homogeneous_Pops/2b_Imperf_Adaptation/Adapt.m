@@ -18,7 +18,7 @@
 % Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
 
 clear;     clc;     tic;
-% Initialize
+rng(0);
 
 global k1 k2 k3 k4 S K nH;
 
