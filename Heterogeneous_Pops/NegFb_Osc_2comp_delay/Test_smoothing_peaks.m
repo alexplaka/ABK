@@ -1,7 +1,7 @@
 %% Plot [selected] time course with detected peaks shown
 % Using Report Nomenclature: X = R , Rp = Xp  (script name = report name) in legend.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 trial = 20;                         % Choose simulation run/trial (trial <= reps)
 

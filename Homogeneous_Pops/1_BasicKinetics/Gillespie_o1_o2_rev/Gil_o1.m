@@ -1,7 +1,7 @@
 % A --> B + C
 % Simulating 1st order (dissociation) kinetics using the Gillespie algorithm.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;
 rng(0);

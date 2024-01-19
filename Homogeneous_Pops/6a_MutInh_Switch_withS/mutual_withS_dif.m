@@ -16,7 +16,7 @@ function [dydt] = mutual_withS_dif(t,y)
 % S inhibits the inhibition of B by A (assume complete repression)
 % Assume S does not change.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3 
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_da k_db;
 global k_a alpha_a K_b n_b;

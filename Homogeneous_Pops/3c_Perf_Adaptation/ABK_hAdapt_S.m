@@ -21,7 +21,7 @@
 
 % Assume number of S molecules does NOT change.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;             tic;
 clc; 

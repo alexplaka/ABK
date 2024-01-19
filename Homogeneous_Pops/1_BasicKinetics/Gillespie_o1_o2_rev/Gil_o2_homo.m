@@ -2,7 +2,7 @@
 % Simulating 2nd order kinetics using the Gillespie algorithm
 % for a homologous 2nd order process.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;
 rng(0);

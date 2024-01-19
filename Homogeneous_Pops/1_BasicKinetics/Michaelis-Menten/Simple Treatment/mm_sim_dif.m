@@ -2,7 +2,7 @@ function [dydt] = mm_sim_dif(t,y)
 % Simulating Michaelis-Menten kinetics - Simple Implementation
 % Overall rx: A --> B
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_cat Km E_tot;
 

@@ -18,7 +18,7 @@
 
 % Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;      clc;     tic;                           % rng(1);
 rng(0);

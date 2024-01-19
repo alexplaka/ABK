@@ -16,7 +16,7 @@
 % k_b: synthesis of X, 0th order process (upregulated by S)
 % k_d: degradation of X, 1st order process (X)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;             tic;
 clc; 

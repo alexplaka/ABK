@@ -22,7 +22,7 @@ function [dydt] = hadapt_dif(t,y)
 
 % Assume number of S molecules does NOT change.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_sr k_f k_r k_sp k_dp k_sx k_dx S;
 

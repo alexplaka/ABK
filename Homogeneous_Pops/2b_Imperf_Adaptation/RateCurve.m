@@ -2,7 +2,7 @@
 % value of R (Response). This agrees with the theoretically determined R_ss 
 % value, which does not depend on S.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;
 % Initialize

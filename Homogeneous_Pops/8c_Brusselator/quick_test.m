@@ -5,7 +5,7 @@
 % X --> Y           (1st order wrt X; rate constant: c)
 % 2X + Y --> 3X     (3rd order: 2nd wrt X, 1st wrt Y; rate constant: a)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; % clc;
 

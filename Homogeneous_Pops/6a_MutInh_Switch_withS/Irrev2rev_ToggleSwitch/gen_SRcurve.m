@@ -14,7 +14,7 @@
 % S inhibits the inhibition of B by A (assume complete repression)
 % Assume S does not change.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 %% Declare variables and functions
 clear;                          clc; 

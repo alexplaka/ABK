@@ -1,7 +1,7 @@
 % Here, I compare the ODE solutions and ABK time trajectories of the 
 % Simple and Full implementations of Michaelis-Menten kinetics.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;
 

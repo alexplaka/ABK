@@ -12,7 +12,7 @@ function [dydt] = mutual_dif(t,y)
 % B influences the rate of the synthesis of A
 % A influences the rate of the synthesis of B
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_da k_db;
 global k_a alpha_a K_b n_b;

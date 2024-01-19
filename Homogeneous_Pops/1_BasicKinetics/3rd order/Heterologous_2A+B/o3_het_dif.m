@@ -1,7 +1,7 @@
 function [dydt] = o3_het_dif(t,y)
 % Solve ODEs for 2A + B --> D
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 
 global k;                       % MICROscopic kinetic constant

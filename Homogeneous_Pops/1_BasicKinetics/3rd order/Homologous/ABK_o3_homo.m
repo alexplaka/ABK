@@ -8,7 +8,7 @@
 % separately from the others, and the correct number of molecules is
 % marked as reacted when rand < P.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;                             tic
 rng(0);

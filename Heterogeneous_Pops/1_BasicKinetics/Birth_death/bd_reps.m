@@ -8,7 +8,7 @@
 % chosen parameters (e.g., reps). Make sure you have enough RAM and swap
 % so you don't get an 'out of memory' error message.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;            tic;
 rng(0);

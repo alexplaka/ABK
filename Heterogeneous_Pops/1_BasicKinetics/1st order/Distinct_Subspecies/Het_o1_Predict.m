@@ -26,7 +26,7 @@ function [N_avg, N_sdev] = Het_o1_Predict(time_array, Ao, k_array)
 % condensed, but I have kept each step of the process separate
 % for readibility, clarity, and debugging purposes.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 time = time_array;                  
 agents = Ao;                        % Initial population size

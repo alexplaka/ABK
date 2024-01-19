@@ -6,7 +6,7 @@
 % Here, I evaluate each possible interaction wrt A.
 % (ie, I draw a random number for each possible A-B pair).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;     tic
 rng(0);

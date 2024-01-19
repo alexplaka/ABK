@@ -23,7 +23,7 @@ function [dydt] = actinh2_dif(t,y)
 
 % Using only 3 differential equations.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global agents k_b k_d1 k_d2 k_s k_bx k_dx k_f k_r Km_f Km_r S;
 

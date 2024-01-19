@@ -25,7 +25,7 @@
 % Note: Assume number of S molecules/agents is NOT changing (eg, S is DNA molecules)
 % Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;       
 clc;     tic;                                          

@@ -3,7 +3,7 @@
 % Actual rxs: E + A <--> EA --> E + B       (Not explicitly modeled)
 % Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;       tic;
 rng(0);

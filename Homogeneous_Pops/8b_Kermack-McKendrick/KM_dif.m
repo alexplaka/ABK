@@ -2,7 +2,7 @@ function [dydt] = KM_dif(t,y)
 % H + S --> S + S                       Rate constant k_c  (2nd order)
 %     S --> D                           Rate constant k_d  (1st order)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_c k_d;
 

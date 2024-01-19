@@ -6,7 +6,7 @@
 % and unsimulated process -- for instance, a degradation
 % reaction in a birth-death process). 
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;
 rng(0);

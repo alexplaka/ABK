@@ -31,7 +31,7 @@
 
 % This script is adapted from '../mAct_hetKm_reps.m' 
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;     close all;     clc;     tic;                           
 reps = 100;                  % Number of times to repeat experiment

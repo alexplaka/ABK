@@ -2,7 +2,7 @@
 %     S --> D                           Rate constant k_d  (1st order)
 % Simulating Kermack-McKendrick model using the agent-based algorithm (ABK).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;  tic
 rng(0);

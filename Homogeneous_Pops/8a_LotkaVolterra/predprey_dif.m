@@ -5,7 +5,7 @@ function [dydt] = predprey_dif(t,y)
 % F     -->                 Death of F; rate constant: c (1st order)
 % F + R --> 2F + R          Birth of F; rate constant: d (2nd order)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global a b c d;
 

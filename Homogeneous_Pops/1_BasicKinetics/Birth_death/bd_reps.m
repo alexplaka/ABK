@@ -4,7 +4,7 @@
 % k_b: birth, 0th order process; k_d: death, 1st order process. 
 % Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;            tic;
 rng(1);

@@ -4,7 +4,7 @@
 % F     -->                 Death of F; rate constant: c (1st order)
 % F + R --> 2F + R          Birth of F; rate constant: d (2nd order)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;                 clc; 
 % Declare variables and functions

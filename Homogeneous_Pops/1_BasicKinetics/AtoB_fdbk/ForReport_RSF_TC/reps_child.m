@@ -1,7 +1,7 @@
 %  A --> B  ,     with feedback from B
 % Simulating 1st order kinetics. Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 % clear;  clc;     tic;
 

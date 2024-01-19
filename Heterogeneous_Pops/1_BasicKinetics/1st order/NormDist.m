@@ -2,7 +2,7 @@
 % *** Heterogeneous population of A ***
 % Here, we assume normally distributed k values of the A population.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;             tic
 rng(0);

@@ -3,7 +3,7 @@
 % Lecca, P. et al. in Deterministic Versus Stochastic Modelling ...
 % in Biochemistry and Systems Biology, pp. 35–82 (2013).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 k = 0.005;
 agents = 10;

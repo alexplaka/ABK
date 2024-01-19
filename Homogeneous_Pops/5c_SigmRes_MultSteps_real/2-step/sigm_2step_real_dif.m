@@ -8,7 +8,7 @@ function [dydt] = sigm_2step_real_dif(t,y)
 
 % Assume number of S molecules does not change.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_f k_r S;
 

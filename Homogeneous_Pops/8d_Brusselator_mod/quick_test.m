@@ -10,7 +10,7 @@
 % 2X <--> Z                     k_f/k_r = K_eq
 % Z + Y --> Z + X               2nd order rate constant a 
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;  clc;
 

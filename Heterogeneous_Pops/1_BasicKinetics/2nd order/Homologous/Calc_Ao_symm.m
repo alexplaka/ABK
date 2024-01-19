@@ -21,7 +21,7 @@
 % assumes that agent-agent interactions are reciprocal, as represented 
 % in the PHM (e.g., k_12 = k_21).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;   clc;
 

@@ -22,7 +22,7 @@ function [dydt] = negFb_delaydif(t,y,Z)
 
 % Using delay in feedback reaction.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global agents k_s k_b k_d1 k_d2 k_f k_r Km_f Km_r S;
 

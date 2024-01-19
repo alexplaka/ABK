@@ -4,7 +4,7 @@
 % Here, I evaluate each possible interaction wrt B.
 % (ie, I draw a random number for each possible B-A pair).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;
 rng(0);

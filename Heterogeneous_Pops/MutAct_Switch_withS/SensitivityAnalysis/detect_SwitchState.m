@@ -21,7 +21,7 @@ function [ON] = detect_SwitchState(all, time, gap, ss, leg_str)
 %           Note: string arrays of this format can be used in 
 %           Matlab R2017a and later.
 % ************************************************************************     
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 ss_diff = abs( ss(1) - ss(2) );
 all_ON = abs( all - ss(1) ) < ss_diff / 4;   % Heuristic cutoff

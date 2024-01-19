@@ -1,6 +1,6 @@
 function [dydt] = o2_dif(t,y,k)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global DE_canon;
 

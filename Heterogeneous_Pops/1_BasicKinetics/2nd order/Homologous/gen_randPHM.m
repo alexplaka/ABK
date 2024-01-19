@@ -4,7 +4,7 @@ function [k , abundance] = gen_randPHM(Ao,k_sub)
 % randomly chosen interacting agent-agent pairs. The interactions
 % are assumed to be reciprocal: k(i,j) = k(j,i)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 s = size(k_sub,2);              % number of subinteraction groups
 k = zeros(Ao);

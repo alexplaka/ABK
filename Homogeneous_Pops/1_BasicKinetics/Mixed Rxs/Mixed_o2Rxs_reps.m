@@ -2,7 +2,7 @@
 %  A + C   --> Y              Rate constant k2  (2nd order)
 % Simulating concurrent 2nd order reactions using my agent-based algorithm. 
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; clc;  tic
 rng(0);

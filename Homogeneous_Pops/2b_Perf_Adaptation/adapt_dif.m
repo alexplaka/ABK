@@ -13,7 +13,7 @@ function [dydt] = adapt_dif(t,y)
 % k3: synthesis of X, 0th order process (upregulated by S)
 % k4: degradation of X, 1st order process (X)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k1 k2 k3 k4 S;
 

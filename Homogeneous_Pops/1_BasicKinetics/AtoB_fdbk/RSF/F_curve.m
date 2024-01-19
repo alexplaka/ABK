@@ -1,7 +1,7 @@
 % This script makes a graph of the scaling factor F as a function 
 % of the number of agents X
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear; 
 

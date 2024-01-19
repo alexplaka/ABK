@@ -1,7 +1,7 @@
 function [] = bifurc(A_i,B_i)                          
 % Input: Initial population sizes of A and B
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global agents;
 global k_da k_db;

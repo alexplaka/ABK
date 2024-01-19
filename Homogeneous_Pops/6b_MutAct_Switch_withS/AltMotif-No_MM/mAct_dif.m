@@ -17,7 +17,7 @@ function [dydt] = mAct_dif(t,y)
 
 % Note: Assume number of S molecules/agents is NOT changing (eg, S is DNA molecules)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_b k_d k_s k_f k_r S;
 R = y(1);         Ep = y(2);          E = y(3);

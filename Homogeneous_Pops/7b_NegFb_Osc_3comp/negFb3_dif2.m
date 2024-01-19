@@ -28,7 +28,7 @@ function [dydt] = negFb3_dif2(t,y)
 
 % Note: Assume number of S molecules/agents is NOT changing (eg, S is DNA molecules)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global  k_s k_b k_d1 k_d2 k_f k_r Km_f Km_r k_f1 k_r1 Km_f1 Km_r1 S;
 

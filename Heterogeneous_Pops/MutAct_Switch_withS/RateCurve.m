@@ -1,6 +1,6 @@
 function [R_ss_int, Ep_ss] = RateCurve()
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global agents k_b k_d k_s k_f k_r Km_f Km_r_mean S;
 

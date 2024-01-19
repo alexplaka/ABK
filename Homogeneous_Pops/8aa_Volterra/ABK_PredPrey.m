@@ -6,7 +6,7 @@
 
 % Considering individual agents.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 % Note two (limiting) cases that come up:
 % - If R goes extinct, then F will too (according to this model).

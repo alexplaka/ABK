@@ -7,7 +7,7 @@ function [dydt] = sigm_2step_dif(t,y)
 % Assume number of S molecules does not change.
 % Agent-based interpretation of S population size.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k_f k_r S;
 

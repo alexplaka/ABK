@@ -27,7 +27,7 @@
 % Here, we consider the case where only some agents X are sensitive to a 
 % normally-distributed delay (i.e., distinct subspecies).
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 clear;       
 clc;     tic;                                          

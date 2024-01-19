@@ -21,7 +21,7 @@
 
 % Here, we generate the theoretical SR curve for this motif.
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 %% Declare variables and functions
 clear;                          clc; 

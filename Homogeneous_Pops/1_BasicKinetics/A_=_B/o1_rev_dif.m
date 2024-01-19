@@ -1,6 +1,6 @@
 function [dydt] = o1_rev_dif(t,y)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global ko_f ko_r;
 

@@ -1,6 +1,6 @@
 function [dydt] = o2_het_dif(t,y)
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global k
 A = y(1);       B = y(2);       C = y(3);

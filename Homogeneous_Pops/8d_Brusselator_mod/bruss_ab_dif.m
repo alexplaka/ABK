@@ -12,7 +12,7 @@ function [dydt] = bruss_ab_dif(t,y)
 
 % Agent-Based interpretation
 
-% Author: Alex Plakantonakis,   Copyright (c) 2019.           License: GNU GPLv3
+% Author: Alex Plakantonakis,   Copyright (c) 2019-2024.           License: GNU GPLv3
 
 global a b c d k_f k_r;
 
